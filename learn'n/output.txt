@@ -1,0 +1,1 @@
+[[0, 1, 2], [[<learn.neuron object at 0x0000018D6E6B65C0>, <learn.neuron object at 0x0000018D6E6B6630>, <learn.neuron object at 0x0000018D6E6CD668>], [<learn.neuron object at 0x0000018D6E6D34A8>, <learn.neuron object at 0x0000018D6E6D33C8>, <learn.neuron object at 0x0000018D6E6D3438>]]]
