@@ -3,7 +3,6 @@ import tkinter
 import learn
 bob = turtle.Turtle()
 bob.hideturtle()
-test = learn.laern(6, 10, 5, 3, 50, 50)
 
 
 def disp(laern, text, space, coloured_dots):
@@ -88,8 +87,8 @@ def disp(laern, text, space, coloured_dots):
         for i in range(len(out)):
             circ(widths[len(widths) - 1], out[i], "#000000")
 
-        ts = turtle.getscreen()
-        ts.getcanvas().postscript(file="duck.eps")
+    ts = turtle.getscreen()
+    ts.getcanvas().postscript(file="duck.eps")
     
 def circ(x, y, color):
     bob.color("#000000")
@@ -100,5 +99,3 @@ def circ(x, y, color):
     bob.circle(5)
     bob.end_fill()
     bob.penup()
-
-disp(test, True, 500, True)

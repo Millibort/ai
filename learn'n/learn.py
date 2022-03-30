@@ -11,8 +11,8 @@ class laern:
         self.hids = []
         self.outs = []
         self.make_in()
-        self.make_hid()
-        self.final = [self.ins, self.hids, self.outs]
+        self.make_hid() #, self.outs
+        self.final = [self.ins, self.hids]
 
     def redefine(self, final):
         self.final = final
@@ -54,9 +54,10 @@ class laern:
             else:
                 innur = self.hidnum
             if(runs == midlayers - 1):
+                self.hids.append([])
                 nurnum = self.outnum
                 for i in range(nurnum):
-                    self.outs.append(self.hidsetup(innur))
+                    self.hids[runs].append(self.hidsetup(innur))
             else:
                 self.hids.append([])
                 nurnum = self.hidnum
@@ -96,3 +97,6 @@ class neuron:
         self.inputs = inputs
         self.weight = weight
         self.color = color
+
+test = laern(3,3,3,3,3)
+test.save()
