@@ -4,7 +4,6 @@ import learn
 bob = turtle.Turtle()
 bob.hideturtle()
 
-
 def disp(laern, text, space, coloured_dots):
     neghalf = (space / 2) * -1
     bob.speed(0)
