@@ -21,6 +21,7 @@ def findbiggest(list):
     return(x)
 
 def main(inst, rounds):
+    global GScore
     ai = []
     newai = []
     best = 0
@@ -37,6 +38,7 @@ def main(inst, rounds):
             scores.append(average([list_of_tests[0].score(run(ai[x].final, list_of_tests[0].getin())), list_of_tests[0].score(run(ai[x].final, list_of_tests[0].getin())), list_of_tests[0].score(run(ai[x].final, list_of_tests[0].getin())), list_of_tests[0].score(run(ai[x].final, list_of_tests[0].getin()))]))
         best = findbiggest(scores)
     print(scores[best])
+    GScore = scores[best]
     return(ai[best])
 
 class test:
@@ -80,7 +82,9 @@ def run(net, tests):
 #print(run(tests.final, list_of_tests[0].getin()))
 #print()
 #print(tests.final)
-net = main(50, 50)
+GScore = 0
+while GScore < 3:
+    net = main(50, 50)
 net.save()
 #graph.disp(net, False, 750, True)
 print(net.final)
