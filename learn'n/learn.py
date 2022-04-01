@@ -72,7 +72,9 @@ class laern:
             choice = random.randint(0, len(possins) - 1)
             ins.append(possins[choice])
             del(possins[choice])
-        weight = random.randint(1, len(ins))
+        weight = random.randint(len(ins) * -1, len(ins))
+        while weight == 0:
+            weight = random.randint(len(ins) * -1, len(ins))
         return(neuron(ins, weight, self.rancolor()))
     
     def rancolor(self):
