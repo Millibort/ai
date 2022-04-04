@@ -18,10 +18,10 @@ class laern:
         self.final = final
     
     def revise(self):
-        outs = []
         self.hids = self.final[1]
         self.remake_hid()
-        return([self.ins, self.hids, self.outs])
+        #print(self.hids[0][0].inputs)
+        return([self.ins, self.hids])
 
     def make_in(self):
         for i in range(self.innum):
@@ -36,14 +36,13 @@ class laern:
                 innur = self.hidnum
             if(runs == midlayers - 1):
                 nurnum = self.outnum
-                for i in range(nurnum):
-                    if(random.randint(1, 100) > self.chang):
-                        self.hids[runs][i] = self.hidsetup(innur)
             else:
                 nurnum = self.hidnum
-                for i in range(nurnum):
-                    if(random.randint(1, 100) > self.chang):
-                        self.hids[runs][i] = self.hidsetup(innur)
+            for i in range(nurnum):
+                if(random.randint(1, 100) < self.chang):
+                    self.hids[runs][i] = self.hidsetup(innur)
+                #elif(random.randint(1, 100) > self.chang):
+                    #self.hids[runs][i] = neuron(fin[1][runs][i].inputs, fin[1][runs][i].weight, self.rancolor())
 
     def make_hid(self):
         midlayers = self.steps - 1
@@ -76,7 +75,7 @@ class laern:
         while weight == 0:
             weight = random.randint(len(ins) * -1, len(ins))
         return(neuron(ins, weight, self.rancolor()))
-    
+
     def rancolor(self):
         letter = ['A', 'B', 'C', 'D', 'E', 'F']
         color = []

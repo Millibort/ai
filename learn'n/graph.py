@@ -88,7 +88,7 @@ def disp(laern, text, space, coloured_dots):
 
     ts = turtle.getscreen()
     ts.getcanvas().postscript(file="duck.eps")
-    
+
 def circ(x, y, color):
     bob.color("#000000")
     bob.fillcolor(color)
